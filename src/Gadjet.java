@@ -3,8 +3,10 @@ abstract class Gadget implements SmartDevice {
     abstract void batteryStatus();
 }
 
-
-class SmartPhone extends Gadget {
+abstract class MiniGadgets extends Gadget {
+    abstract void showGPS();
+}
+class SmartPhone extends MiniGadgets {
     @Override
     public void turnOn() {
         System.out.println("SmartPhone is turned on.");
@@ -37,12 +39,17 @@ class SmartPhone extends Gadget {
     void sendSMS(String message) {
         System.out.println("Sending SMS: " + message);
     }
-
     void connectToDevice(SmartDevice anotherDevice) {
         System.out.println("SmartPhone connected to another device.");
     }
+    @Override
+    void showGPS() {
+        System.out.println("SmartPhone GPS coordinates: 123.456, 789.012");
+    }
 }
-class SmartWatch extends Gadget {
+
+
+class SmartWatch extends MiniGadgets {
     @Override
     public void turnOn() {
         System.out.println("SmartWatch is turned on.");
@@ -79,7 +86,13 @@ class SmartWatch extends Gadget {
     void connectToDevice(SmartDevice anotherDevice) {
         System.out.println("SmartWatch connected to another device.");
     }
+    @Override
+    void showGPS() {
+        System.out.println("SmartWatch GPS coordinates: 456.789, 012.345");
+    }
 }
+
+
 class SmartTV extends Gadget {
     @Override
     public void turnOn() {

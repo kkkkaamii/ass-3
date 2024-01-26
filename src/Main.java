@@ -12,15 +12,17 @@ public class Main {
         smartphone.receiveNotification("New message received.");
         smartphone.batteryStatus();
         smartphone.connectToDevice(smarttv);
+        smartphone.showGPS();
 
 
         smartwatch.turnOn();
         smartwatch.connectToInternet();
         smartwatch.trackHeartRate();
         smartwatch.showTime();
-        smartwatch.receiveNotification("Meeting at 3 PM.");
+        smartwatch.receiveNotification("Meeting at 2 PM.");
         smartwatch.batteryStatus();
         smartwatch.connectToDevice(smartphone);
+        smartwatch.showGPS();
 
 
         smarttv.turnOn();
